@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .top{
+            margin-bottom: 20px;
+            background-color: red;
+            height: 50px;
+        }
+        .bottom{
+            margin-top: 30px;
+            background-color: blue;
+            height: 50px;
+        }
+
+        .top2{
+            margin-bottom: 20px;
+            background-color: red;
+            height: 50px;
+
+            float: left;
+            width: 100%;
+        }
+        .bottom2{
+            margin-top: 30px;
+            background-color: blue;
+            height: 50px;
+
+            float: left;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 两个div发生垂直外边距坍塌.
+    外边距坍塌计算：两正值或俩负值，取其大； 一正一负值，取相加后的值-->
+    <div>
+        <div class="top">这是上部分</div>
+        <div class="bottom">这是下部分</div>
+    </div>
+
+
+    <!-- 通过创建两个bfc可以防止垂直外边距坍塌。(通过将float设为非none值，可创建一个bfc) -->
+    <div>
+        <div class="top2">这是上部分</div>
+        <div class="bottom2">这是下部分</div>
+    </div>
+    
+</body>
+</html>
