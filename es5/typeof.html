@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        /* typeof 7个值： string, number, boolean, undefined, symbol, function, object */
+        console.log(typeof "") ;
+        console.log(typeof 5);
+        console.log(typeof true);
+        console.log(typeof undefined);
+        console.log(typeof Symbol());
+        
+        console.log(typeof null); // object
+        console.log(typeof []);
+        console.log(typeof {}); 
+
+        /* 如何区分[]和{} */
+        // 方法一：
+        console.log(Array.isArray({}));//false
+        console.log(Array.isArray([]));//false
+
+        // 方法2：
+        console.log([] instanceof Array);
+        console.log({} instanceof Array);
+    </script>
+</body>
+</html>
