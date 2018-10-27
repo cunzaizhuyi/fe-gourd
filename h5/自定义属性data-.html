@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div[data-name=zhangsan] {
+            background-color: #ccc;
+            color: red;
+        }
+        .lisi[data-name=lisi]{
+            height: 200px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="zhangsan" data-name='zhangsan' data-info='{age:33, gender:"女"}'>张三的内容</div>
+        <div class='lisi' data-name='lisi'>李四的内容</div>
+    </div>
+    <script>
+        /* js获取自定义属性中的内容 */
+        let divDataSet = document.getElementById('zhangsan').dataset;
+        console.log(divDataSet);
+    </script>
+</body>
+</html>
