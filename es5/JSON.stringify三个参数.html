@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>   
+        /* 值为undefined属性，也相当于不存在，会被JSON.stringify忽略 */
+        let obj = {
+            a:undefined,
+            b:4,
+            c: [],
+            d:{e: 3}
+        };
+        
+        console.log('只传待序列化对象：', JSON.stringify(obj));
+
+        /* 第2个参数，相当于处理器 */
+        console.log('传第二个参数：', JSON.stringify(obj, (k, v) => {
+            if (k !== 'd') { // 不序列化d属性
+                return v;
+            }
+        }));
+
+        /* 第三个参数，space参数 */
+        console.log(JSON.stringify(obj, null, ''));
+
+        console.log(JSON.stringify(obj, null, '\t')); //等于传4
+
+        console.log(JSON.stringify(obj, null, 4)); // 1-10是合法的
+        console.log(JSON.stringify(obj, null, 12)); //超过10，按10算
+        console.log(JSON.stringify(obj, null, -4)); //负数，相当于没传第三个参数
+        console.log(JSON.stringify(obj, null, 0)); //0，相当于没传第三个参数
+    </script>
+</body>
+</html>
