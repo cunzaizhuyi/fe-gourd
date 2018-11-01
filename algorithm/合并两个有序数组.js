@@ -20,10 +20,11 @@ console.log(merge(left, right))
 
 // 合并N个有序数组, 把N个数组放置到arr里面
 function mergeMultiArray(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    arr[i + 1] = merge(arr[i], arr[i + 1])
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    newArr = merge(newArr, arr[i])
   }
-  return arr[arr.length - 1];
+  return newArr;
 }
 let a1 = [1, 2, 3, 4];
 let a2 = [5, 6, 7, 8];
