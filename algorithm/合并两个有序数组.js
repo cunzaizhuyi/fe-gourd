@@ -1,3 +1,4 @@
+// 合并两个有序数组
 function merge(left, right) {
     var result = [],
         il = 0,
@@ -16,3 +17,16 @@ function merge(left, right) {
 var left = [1, 4, 7, 8, 9, 10];
 var right = [2, 5];
 console.log(merge(left, right))
+
+// 合并N个有序数组, 把N个数组放置到arr里面
+function mergeMultiArray(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    arr[i + 1] = merge(arr[i], arr[i + 1])
+  }
+  return arr[arr.length - 1];
+}
+let a1 = [1, 2, 3, 4];
+let a2 = [5, 6, 7, 8];
+let a3 = [9, 11, 13, 15];
+let a4 = [10, 12, 14, 16];
+console.log(mergeMultiArray([a1, a2, a3, a4]));
