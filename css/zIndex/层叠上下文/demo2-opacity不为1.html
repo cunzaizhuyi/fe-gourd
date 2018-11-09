@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo-2-opacity不为1</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 300px;
+    }
+    .opacity-box{
+      background-color: pink;
+      opacity: 1;
+    }
+    .opacity-box2{
+      background-color: deepskyblue;
+      opacity: 0.99;
+    }
+    .base-box{
+      background-color: yellowgreen;
+      text-align: right;
+      margin-top: -150px;
+      margin-left: 150px;
+    }
+  </style>
+</head>
+<body>
+<div class="box opacity-box">opacity = 1 不创建层叠上下文</div>
+<div class="box base-box">我在DOM流后面</div>
+
+<hr>
+
+<div class="box opacity-box2">opacity = 0.99 创建层叠上下文</div>
+<div class="box base-box">我在DOM流后面</div>
+</body>
+</html>

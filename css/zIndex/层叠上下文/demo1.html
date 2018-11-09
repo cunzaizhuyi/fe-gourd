@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo1-层叠上下文</title>
+  <style>
+    .box-base{
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+      margin-left: 150px;
+      margin-top: -150px;
+    }
+    .flex-box{
+      display: flex;
+      width: 300px;
+      height: 300px;
+      background-color: greenyellow;
+    }
+    .flex-item{
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+<div class="flex-box">
+  <div class="flex-item">我是flex盒子子项</div>
+</div>
+<div class="box-base">我在后面</div>
+</body>
+</html>

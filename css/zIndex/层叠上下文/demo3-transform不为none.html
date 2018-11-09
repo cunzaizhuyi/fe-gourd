@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo-2-opacity不为1</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 300px;
+    }
+    .transform-box{
+      background-color: pink;
+    }
+    .transform-box:hover{
+      transform: rotate(30deg)
+    }
+    .transform-box2{
+      background-color: deepskyblue;
+      transform: rotate(30deg)
+    }
+    .base-box{
+      background-color: yellowgreen;
+      text-align: right;
+      margin-top: -150px;
+      margin-left: 150px;
+    }
+  </style>
+</head>
+<body>
+<div class="box transform-box">transform = none 不创建层叠上下文</div>
+<div class="box base-box">我在DOM流后面</div>
+
+<hr>
+
+<div class="box transform-box2">transform = rotate(30deg) 创建层叠上下文</div>
+<div class="box base-box">我在DOM流后面</div>
+</body>
+</html>
