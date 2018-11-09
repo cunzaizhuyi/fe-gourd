@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>z-index支持动画</title>
+    <style>
+        img{
+            width: 150px;
+            margin-left: -50px;
+        }
+        @keyframes zIndex {
+            0% {
+                z-index: -1;
+            }
+            100%{
+                z-index: 10;
+            }
+        }
+        .box{
+            position: absolute;
+            left:0;
+            top: 0;
+            width: 100%;
+            height: 200px;
+            background-color: #3BD864;
+            animation: zIndex 5s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 1;">
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 2;">
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 3;">
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 4;">
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 5;">
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 6;">
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 7;">
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 8;">
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 9;">
+    <img src="../王子文.jpeg" alt="" style="position: relative; z-index: 10;">
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo2-谁大谁上</title>
+    <style>
+        .box1, .box2{
+            width: 300px;
+            height: 300px;
+        }
+        .box1{
+            background-color: pink;
+        }
+        .box2{
+            background-color: #3BD864;
+            margin-top:-150px;
+            margin-left: 150px;
+            text-align: right;
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+        }
+        .inner1{
+            background-color: green;
+        }
+        .inner2{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 后来居上 -->
+    <div class="box1" style="position: relative; z-index: 2;">
+        <div class="inner inner1" style="position:relative; z-index: 3;"></div>
+    </div>
+    <div class="box2">
+        <div class="inner inner2" style="position:relative; z-index: 4;"></div>
+    </div>
+</body>
+</html>

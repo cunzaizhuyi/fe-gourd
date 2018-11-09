@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo1-flex子项层叠上下文</title>
+  <style>
+    body{
+      background-color: #ccc;
+    }
+    .flex-box{
+      display: flex;
+      width: 300px;
+      height: 300px;
+    }
+    .flex-item{
+      width: 300px;
+      height: 300px;
+      z-index: 1;
+      background-color: greenyellow;
+    }
+    img{
+      width: 300px;
+      position: relative;
+      top:100px;
+      left: 100px;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+<div class="flex-box">
+  <div class="flex-item">
+    <img src="../王子文.jpeg" alt="">
+  </div>
+</div>
+</body>
+</html>

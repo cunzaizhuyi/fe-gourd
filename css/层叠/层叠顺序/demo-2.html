@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo2-层叠顺序</title>
+    <style>
+        .box, .box1, .box2{
+            width: 300px;
+            height: 300px;
+        }
+        .box1{
+            background-color: pink;
+            display: inline-block;
+        }
+        .box2{
+            background-color: #3BD864;
+            margin-left: 150px;
+            margin-top: -150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">我是inline-block元素</div>
+    </div>
+    <div class="box2">我是块状元素我是块状元素我是块状元素</div>
+
+    <script>
+        /* 根据层叠顺序， 内联元素在上，故box1比box2在上。
+        box1、box1中的文字、box2中的文字都是内联水平，它们遵循后来居上，故box2的文字要在box1上面*/
+    </script>
+</body>
+</html>

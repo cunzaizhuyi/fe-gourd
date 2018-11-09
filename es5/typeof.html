@@ -14,8 +14,11 @@
         console.log(typeof true);
         console.log(typeof undefined);
         console.log(typeof Symbol());
-        
-        console.log(typeof null); // object
+
+        // object， 因为typeof null === ‘object’，所以并没有一个值的typeof是null
+        // 这是一个存在了20年的bug。
+        console.log(typeof null); 
+
         console.log(typeof []);
         console.log(typeof {}); 
 

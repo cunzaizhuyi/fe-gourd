@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo1-后来居上</title>
+    <style>
+        .box1, .box2{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            z-index: 1;
+        }
+        .box1{
+            background-color: pink;
+        }
+        .box2{
+            background-color: #3BD864;
+            margin-top:-150px;
+            margin-left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 后来居上 -->
+    <div class="box1">a元素</div>
+    <div class="box2">b元素</div>
+</body>
+</html>

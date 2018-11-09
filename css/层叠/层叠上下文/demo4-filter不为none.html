@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo-2-opacity不为1</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+    }
+    .filter-box{
+      background-color: pink;
+    }
+    .filter-box:hover{
+      filter: blur(1px);
+    }
+    .filter-box2{
+      background-color: pink;
+      filter: blur(1px);
+    }
+    .base-box{
+      background-color: yellowgreen;
+      text-align: right;
+      margin-top: -100px;
+      margin-left: 100px;
+    }
+  </style>
+</head>
+<body>
+<div class="box filter-box">filter = none 不创建层叠上下文</div>
+<div class="box base-box">我在DOM流后面</div>
+
+<hr>
+
+<div class="box filter-box2">filter = blur(1px) 创建层叠上下文</div>
+<div class="box base-box">我在DOM流后面</div>
+</body>
+</html>
