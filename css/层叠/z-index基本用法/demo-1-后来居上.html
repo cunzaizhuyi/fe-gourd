@@ -9,8 +9,6 @@
         .box1, .box2{
             width: 300px;
             height: 300px;
-            position: relative;
-            z-index: 1;
         }
         .box1{
             background-color: pink;
@@ -24,7 +22,7 @@
 </head>
 <body>
     <!-- 后来居上 -->
-    <div class="box1">a元素</div>
-    <div class="box2">b元素</div>
+    <div class="box1" style="position:relative; z-index: 1">a元素</div>
+    <div class="box2" style="position:relative; z-index: 1">b元素</div>
 </body>
 </html>

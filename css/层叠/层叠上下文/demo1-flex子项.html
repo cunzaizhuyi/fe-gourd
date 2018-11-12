@@ -8,7 +8,6 @@
       background-color: #ccc;
     }
     .flex-box{
-      display: flex;
       width: 300px;
       height: 300px;
     }
@@ -20,17 +19,16 @@
     }
     img{
       width: 300px;
-      position: relative;
       top:100px;
       left: 100px;
-      z-index: -1;
     }
   </style>
 </head>
 <body>
-<div class="flex-box">
+<div class="flex-box" style="display: flex;">
   <div class="flex-item">
-    <img src="../王子文.jpeg" alt="">
+    这是flex子项
+    <img src="../王子文.jpeg" style="position: relative; z-index: -1;">
   </div>
 </div>
 </body>

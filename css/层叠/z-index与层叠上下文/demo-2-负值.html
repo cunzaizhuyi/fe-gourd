@@ -6,29 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>demo4-z-index负值</title>
     <style>
-        body{
-            background-color: #ccc;
-        }
         .box{
             width:300px;
             height:300px;
-            background-color: blue;
             /* transform: rotate(5deg); */
         }
         .box:hover{
             transform: rotate(5deg);
         }
         img{
-            position: relative;
-            z-index: -1;
             right: -50px;
         }
     </style>
 </head>
-<body>
-    <div class="box">
-        <img src="../王子文.jpeg" alt="">
+<body style="background-color: #ccc">
+    <div class="box" style="background-color: blue;">
+        <img src="../王子文.jpeg" style="z-index: -1; position: relative;">
     </div>
+
+
+
+
+
+
+
+
+
     <script>
         /* 1. 在不加transform: rotate(5deg); 时，box元素没创建层叠上下文，因此img元素所在的层叠上下文
         是根元素，根据层叠顺序，它处于body元素背景色（灰色）之上 */
