@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>封装jsonp</title>
+</head>
+<body>
+<script>
+  // 封装函数
+  function jsonp(url, params, cb) {
+    let queryArr = [];
+    for (let param in params) {
+      queryArr.push(`${param}=${params[param]}`);
+    }
+    let s = queryArr.join('&');
+    queryStr = "?" + s;
+    let script = document.createElement('script');
+    script.src = url + queryStr;
+    document.body.appendChild(script);
+    // 声明一个函数，函数名和约定的名字一样。后端返回结果会传一些实参，并调用这个函数。
+    window[params.cb] = cb;
+  }
+
+  // 函数的使用
+  let url  = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su';
+  let params = {
+    wd: 'a',
+    cb: 'show'
+  };
+  jsonp(url, params, function (data) {
+    console.log('获取的信息：', data);
+  });
+  
+  
+  
+  // 不封装，直接用
+  let script = document.createElement('script');
+  script.src = url + `?wd=bbb&cb=show2`;
+  document.body.appendChild(script);
+  // 声明一个函数，函数名和约定的名字一样。后端返回结果会传一些实参，并调用这个函数。
+  window.show2 = function (data) {
+    console.log('jsonp接口数据：', data);
+  };
+</script>
+</body>
+</html>
