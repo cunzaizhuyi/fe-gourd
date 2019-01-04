@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function bind2 (context) {
+          if (typeof this !== 'funciton') {
+            throw new Error('bind方法您用错了，得用函数调用bind方法，而不是其他类型的变量');
+          }
+          let self = this;
+          let args = Array.prototype.slice(arguments, 1);
+          let f = function () {
+            let args2 = Array.prototype.slice(arguments);
+            self.apply(this instanceof self ? this : context, args.concat(args2))
+          }
+          f.prototype = this.prototype;
+          return f;
+      }
+    </script>
+  </body>
+</html>
