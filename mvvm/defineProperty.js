@@ -1,3 +1,5 @@
+// 对象属性分两种：数据属性 和 访问器属性
+
 let obj = {};
 Object.defineProperty(obj, "name", {
   value: "zhangsan",
