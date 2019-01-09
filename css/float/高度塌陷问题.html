@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 针对浮动元素外层box的兄弟元素：两种解决方案，1使浮动的元素的父元素变成bfc。2后面的元素clear：both */
+    /* 针对浮动元素后面的兄弟元素，clear：both */
+    .box{
+      width: 300px;
+      /* display: table; */
+      /* overflow: hidden; */
+      background-color: #ccc;
+    }
+    .in{
+      background-color: #eee;
+      width:100px;
+      float: left;
+    }
+    .other{
+      clear: both;
+    }
+    .in3{
+      /* clear: both; */
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="in">1</div>
+    <div class="in">2</div>
+    <!-- <div class="in3">3</div> -->
+  </div>
+  <div class="other">dddd</div>
+</body>
+</html>

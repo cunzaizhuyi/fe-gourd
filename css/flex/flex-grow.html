@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flex-grow</title>
+  <style>
+    .out{
+      width: 500px;
+      height:200px;
+      border:1px solid #ccc;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .in{
+      width: 150px;
+      border:1px solid blue;
+    }
+    .in-3{
+      flex-grow: 1;
+    }
+    .in-4{
+      flex-grow: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="out">
+    <div class="in in-1">1</div>
+    <div class="in in-2">2</div>
+    <div class="in in-3">3</div>
+    <div class="in in-4">4</div>
+    <div class="in in-5">5</div>
+  </div>
+
+  <!-- 1、当其他子元素都没有flex-grow，只有一项子元素的flex-grow不为0时， 这个子元素扩展全部剩余的空间-->
+  <!-- 2、 当有其他子元素也是flex-grow不为0时，这些子元素按比例竞争剩余空间-->
+</body>
+</html>
