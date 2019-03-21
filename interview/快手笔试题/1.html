@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .triangle{
+      width: 0;
+      height:0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 40px solid red;
+    }
+    .circle{
+      width: 0;
+      height: 0;
+      border: 10px solid red;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 实现圆形和三角形 -->
+<div class="triangle"></div>
+<div class="circle"></div>
+
+<script>
+// var num = 1;
+// var myObject = {
+//   num: 2,
+//   add: function(){
+//     this.num = 3;
+//     (function () {
+//       console.log(this.num); // 1
+//       this.num = 4;
+//     })()
+//     console.log(this.num); // 3
+//   },
+//   sub: function () {
+//       console.log(this.num)
+//   }
+// }
+// myObject.add();
+// console.log(myObject.num); //3
+// console.log(num); // 4
+// var sub = myObject.sub;
+// sub();  // 4
+
+
+
+// -------------------------------------------------------
+// for(var i = 0; i < 3; i++){
+//   document.addEventListener('click', function(){
+//     console.log(i)
+//   })
+// }
+// document.body.dispatchEvent(new MouseEvent('click', {
+//   bubbles: true,
+//   cancelable: true,
+//   view: window
+// }))
+// 结果是3,3,3
+
+// -------------------------------------------------------------------
+// 10.序列化queryString
+// 输出 a=1&b=2&c='{"d":1}'
+let obj = {
+  a: 1,
+  b: 2,
+  c:{
+    d:3
+  }
+}
+function stringify(obj){
+  let arr = [];
+  for (let item in obj){
+    if (typeof obj[item] !== 'object'){
+      arr.push(item + '=' + obj[item])
+    } else {
+      let str = JSON.stringify(obj[item]);
+      arr.push(item + "=" + str);
+    }
+  }
+  return arr.join('&');
+}
+console.log(stringify(obj))
+</script>
+</body>
+</html>

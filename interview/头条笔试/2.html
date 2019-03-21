@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 最小改动解决错误
+      const obj = {
+        name: 'jsCoder',
+        skill:['es6', 'react', 'angular'],
+        say: function(){
+          for(let i=0;i<this.skill.length;i++){ // var ---> let
+            setTimeout(()=>{ // function ---> 箭头函数
+              console.log('No.'+(i+1)+this.name); // i=>i+1
+              console.log(this.skill[i]);
+              console.log('-----------------------')
+            },0)
+            console.log(i+1); // i --> i+1
+          }
+        }
+      }
+      obj.say();
+
+      //1
+      // 2
+      // 3
+      // No.1 jsCoder
+      // es6
+      // --------
+      // No.2 jsCoder
+      // react
+      // --------
+      // No.3 jsCoder
+      // angular 
+      
+    </script>
+  </body>
+</html>

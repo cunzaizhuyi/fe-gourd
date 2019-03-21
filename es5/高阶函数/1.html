@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function curry(add) {
+        let length = 0;
+        let params = [];
+        return function () {
+          let addFunParams = Array.from(arguments);
+          params = params.concat(addFunParams);
+          let addParamLength = addFunParams.length;
+          if (addParamLength + length === 2) {
+            return add(params);
+          } else {
+            length = addParamLength;
+            return arguments.callee;
+          }
+        };
+      }
+
+      function add(params) {
+        let sum = 0;
+        for (let i of params) {
+          if (typeof i == "number") {
+            sum += i;
+          }
+        }
+        return sum;
+      }
+      let addf = curry(add);
+
+      // console.log(addf(3, 4)); //7
+      console.log(addf(3)(4)) //7
+    </script>
+  </body>
+</html>

@@ -12,7 +12,7 @@
         (function  () {
             let count = 1;
             window.getCount = function () {
-                console.log(count++); 
+                // console.log(count++); 
             }
         })()
         getCount();
@@ -21,6 +21,39 @@
         getCount();
         getCount();
         getCount();
+
+
+        // 经典问题
+        // fangfa 1  es6
+        function print(n){
+            let arr = [];
+            for(let i = 0; i<n; i++){
+                arr[i] = function(){
+                    console.log(i)
+                }
+            }
+            return arr;
+        }
+
+        // fangfa 2  es5
+        function print2(n){
+            let arr = [];
+            for(var i = 0; i<n; i++){
+                (function(i){
+                    arr[i] = function(){
+                        console.log(i)
+                    }
+                })(i);
+            }
+            return arr;
+        }
+
+        print2(5)[0]();
+        print2(5)[1]();
+        print2(5)[2]();
+        print2(5)[3]();
+        print2(5)[4]();
+        
     </script>
 </body>
 </html>

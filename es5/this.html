@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 构造函数和call apply谁的优先级更高
+      function A() {
+        this.a = 1;
+      }
+      let a = A.bind({ a: 2 });
+      let b = new a();
+      // console.log(b);
+
+      // 扁平对象中箭头函数
+      let name = 'zhangsan'
+      let obj = {
+        name: "sss",
+        getName: () => {
+          return this.name;
+        }
+      };
+      let getName = obj.getName;
+      console.log(getName()) // zhangsan
+      console.log('bbb', obj.getName()); //zhangsan
+
+
+      let x = 200;
+      var obj2 = {
+        x:100,//属性x
+        show(){
+            //延迟500毫秒，输出x的值
+            setTimeout(
+               //不同处：箭头函数
+               () => { console.log(this.x)},
+               500
+            );
+        }
+    };
+    let show = obj2.show;
+    show() // undefined
+    obj2.show() ////打印结果：100
+    </script>
+  </body>
+</html>

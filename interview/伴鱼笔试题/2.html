@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 输出结果 ：window 
+    var name = 'window';
+    var object={
+      name: 'object',
+      getNameFunc: function(){
+        return function() {
+          return this.name;
+        }
+      }
+    }
+    console.log(object.getNameFunc()());
+
+
+    // ---------------------自己加题---------------------------
+    var name2 = 'window';
+    var object2={
+      name2: 'object',
+      getNameFunc: function(){
+        return () => { // 区别仅在这里变为箭头函数，输出结果是object
+          return this.name2;
+        }
+      }
+    }
+    console.log(object.getNameFunc()());
+  </script>
+</body>
+</html>

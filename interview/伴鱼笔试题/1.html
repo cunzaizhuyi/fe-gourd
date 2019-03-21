@@ -5,20 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <style>
-    #triangle-up{
-      width:0;
-      height:0;
-      border-bottom:100px solid black;
-      border-left:50px solid transparent;
-      border-right:50px solid transparent;
-    }
-  </style>
 </head>
 <body>
-<div id="triangle-up"></div>
   <script>
-    
+    // 输出结果   13542
+    console.log(1);
+    setTimeout(function(){
+      console.log(2);
+    });
+    var p = new Promise(function(resolve, reject){
+      console.log(3);
+      resolve(4);
+    })
+    p.then(res=>{
+      console.log(res)
+    })
+    console.log(5);
+
   </script>
 </body>
 </html>

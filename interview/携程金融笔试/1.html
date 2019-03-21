@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 比较简单
+      var n = 1;
+      var a = {
+        n:10,
+        fn: function(){
+          var n = 100;
+          return n + this.n;
+        }
+      }
+      var fn = a.fn;
+      console.log(a.fn())
+      console.log(fn())
+      console.log(a.fn.call(this))
+      console.log(a.fn.call(a))
+    </script>
+  </body>
+</html>

@@ -13,14 +13,18 @@ for (let key in obj) {
 
 // writable 对应set ()
 // value 对应 get()
-Object.defineProperty(obj, 'age', {
+let obj2 = {};
+let age = 0;
+Object.defineProperty(obj2, 'age', {
   configurable:true,
   enumerable:true,
   get () {
-    return 28;
+    return age || 2;
   },
   set (v) {
-    console.log(v)
+    age = 20;
   }
 });
-obj.age = 14;
+console.log(obj2.age);
+obj2.age = 14;
+console.log(obj2.age)

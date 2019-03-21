@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 输出结果 ：{a:1}
+    let object = {a:0};
+    function func(obj){
+      obj.a = 1; // 修改了堆中的对象{a:0}的a的值  ----> {a:1}
+      obj = {a:2}; // 引用拷贝 修改了 指向， 堆中创建新对象{a:2}
+      obj.b=2; // 给堆中的新对象增加属性b, ------->{a:2,b:2}
+    }
+    // 综上，堆中有俩对象，{a:1} 和 {a:2,b:2}。object指向的是第一个。
+    func(object);
+    console.log(object);
+
+  </script>
+</body>
+</html>

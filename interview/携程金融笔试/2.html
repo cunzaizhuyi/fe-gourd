@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 2题 也简单
+      var a = {n:10,m:20};
+      var b = a;
+      var c = b;
+      var d = {...b};
+
+      b.n = 30;
+      c = {n:40};
+
+      console.log(a.n) // 30
+      console.log(b) //{n:30, m:20}
+      console.log(c) // {n:40}
+      console.log(d) // {n:10,m:20}
+      console.log(a === b) // true
+      console.log(a === d) // false
+      console.log(b === c) // false
+      console.log(a === c) //false
+    </script>
+  </body>
+</html>
