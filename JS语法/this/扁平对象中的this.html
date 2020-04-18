@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.age = 11111
+
+    // 扁平对象方法中的this. 第一层级的对象方法
+    let a = {
+        age: 11,
+        show: function () {
+            return this.age;
+        }
+    }
+    console.log('a.show', a.show())
+
+    // 方法中嵌套函数。
+    let c = {
+        age: 11,
+        show: function () {
+            function f() {
+                return this.age
+            }
+            return f(); // 这里的调用其实是 window.f()
+        }
+    }
+    console.log('c.show: ',c.show()) // window.age
+
+    // 方法中嵌套函数  仍想使用this表示当前对象  的解决方案。（本质：作用域链）
+    let c2 = {
+        age: 11,
+        show: function () {
+            let self = this;
+            function f() {
+                return self.age;
+            }
+            return f(); // 这里的调用其实是 window.f()
+        }
+    }
+    console.log('c2.show: ',c2.show()) // window.age
+
+    // 方法中嵌套函数  仍想使用this表示当前对象  的解决方案2。（本质：bind）
+    let c3 = {
+        age: 11,
+        show: function () {
+            let f = function() {
+                return this.age;
+            }.bind(this);
+            return f(); // 这里的调用其实是 window.f()
+        }
+    }
+    console.log('c3.show: ',c3.show()) // window.age
+
+</script>
+</body>
+</html>

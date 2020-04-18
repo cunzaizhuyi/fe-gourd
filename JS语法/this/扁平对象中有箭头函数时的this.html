@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    window.age = 22;
+
+    // 一般不这么写
+    let b = {
+        age: 11,
+        show: () => {
+            return this.age;
+        }
+    }
+    console.log('b.show', b.show()) // 输出window.age的值
+
+    // 方法中嵌套 =>  . 避免了使用 作用域链 解决问题
+    let d = {
+        age: 11,
+        show: function() {
+            let ff = () => {
+                return this.age;
+            }
+            return ff()
+        }
+    }
+    console.log('d.show', d.show()) // 11
+
+</script>
+</body>
+</html>

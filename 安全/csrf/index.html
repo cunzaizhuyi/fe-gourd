@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <input type="text">
+    <input type="hidden" name="csrf-token" value="fssfsdf">
+</form>
+<script>
+    // 0 重要请求（涉及金钱）尽量用post，少用get。因为post请求比较难伪造。一般需要加form。而伪造一个get请求，只需要一个img或者a标签
+    // 1 referer
+    // 2 图片验证码
+    // 3 anti CSRF token。 一次性的、随机的码。前端后端各留一份。提交请求带上token，后端校验。一般把token放到隐藏的表单域
+
+</script>
+</body>
+</html>

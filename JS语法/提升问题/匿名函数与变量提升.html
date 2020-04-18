@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 函数声明存在提升。ps: 函数提升是把整个函数体都提升。不是只提升一个函数名
+    fn2()
+    function fn2() {
+        console.log('zhangsan')
+    }
+
+
+    // 匿名函数不存在提升。
+    // Uncaught ReferenceError: Cannot access 'fn' before initialization
+    fn()
+    let fn = () => {
+        console.log('张三')
+    }
+
+
+
+</script>
+</body>
+</html>

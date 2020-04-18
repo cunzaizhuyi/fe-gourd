@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let a = {name: 'zhangsan'};
+    let b = a;
+    
+    let set = new WeakSet();
+    // 因为是弱引用。add操作不会使得对象的引用数+1；
+    set.add(a);
+
+
+    a = null;
+    b = null;
+
+    // 理论上，这时候打印set里面应该没东西。因为垃圾回收了对象{name:'zhangsan'}
+    setTimeout(() => {
+        console.log(set)
+    },2000)
+    console.log(set);
+
+</script>
+
+</body>
+</html>

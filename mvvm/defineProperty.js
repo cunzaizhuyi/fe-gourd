@@ -14,7 +14,7 @@ for (let key in obj) {
 // writable 对应set ()
 // value 对应 get()
 let obj2 = {};
-let age = 0;
+let age = 2;
 Object.defineProperty(obj2, 'age', {
   configurable:true,
   enumerable:true,
@@ -27,4 +27,4 @@ Object.defineProperty(obj2, 'age', {
 });
 console.log(obj2.age);
 obj2.age = 14;
-console.log(obj2.age)
+console.log(obj2.age);
