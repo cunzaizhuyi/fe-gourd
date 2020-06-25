@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    html,body{
+        overflow: scroll;
+    }
+    .f{
+        height:500px;
+        border: 1px solid red;
+        overflow: scroll;
+    }
+    .s{
+        border: 1px solid green;
+        height:100px;
+        width: 100px;
+        position: sticky;
+        top: 150px;
+        left: 200px;
+    }
+    .bb{
+        height: 100px
+    }
+</style>
+<body>
+<div class="f">
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+</div>
+
+<!-- 相当于relative + fixed。固定在特定div内。
+要求父div height > 该元素height -->
+<div class="f">
+    <div class="s">aa</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+    <div class="bb">bb</div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

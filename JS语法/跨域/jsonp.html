@@ -14,6 +14,7 @@
     }
     let s = queryArr.join('&');
     queryStr = "?" + s;
+    
     let script = document.createElement('script');
     script.src = url + queryStr;
     document.body.appendChild(script);
@@ -27,6 +28,7 @@
     wd: 'a',
     cb: 'show'
   };
+
   jsonp(url, params, function (data) {
     console.log('获取的信息：', data);
   });

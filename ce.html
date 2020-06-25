@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width:100%;
+            filter:grayscale(100%);
+            transition: all 2s linear;
+        }
+    </style>
+</head>
+<body>
+<img src="./a.jpg" alt="" id="aa">
+<img src="http://tiebapic.baidu.com/forum/w%3D580/sign=6471c33e144f78f0800b9afb49300a83/3e9759ee3d6d55fb2d672b4c7a224f4a20a4dd33.jpg" alt="444444">
+<script>
+    let div = document.getElementById('aa');
+    div.addEventListener('click', (e) => {
+        div.style.filter = 'grayscale(0)';
+    })
+</script>
+</body>
+</html>
