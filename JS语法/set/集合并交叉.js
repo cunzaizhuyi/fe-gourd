@@ -17,3 +17,31 @@ let diff = [...s1].filter((val) => {
     return !s2.has(val);
 });
 console.log(diff);
+
+
+
+保证最多两任务同时执行
+// 限流器
+class Scheduler {
+...
+    add(promise) {
+        // ...
+    }
+}
+// 模拟异步调用
+const timeout = (time) => new Promise(resolve => {
+    setTimeout(resolve, time)
+})
+
+const scheduler = new Scheduler();
+const addTask = (time, order) => {
+    scheduler.add(() => timeout(time).then(() => {
+        console.log(order);
+    }))
+}
+
+addTask(1000, '1');
+addTask(500, '2');
+addTask(300, '3');
+addTask(400, '4');
+
