@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // CSS 中有多少个属性
+    let ele = document.createElement('div');
+    let cnt = 0;
+    for(let i in ele.style) {
+        // console.log('111: ', i);
+        cnt++
+    };
+    console.log('css属性数: ', cnt);
+</script>
+</body>
+</html>
