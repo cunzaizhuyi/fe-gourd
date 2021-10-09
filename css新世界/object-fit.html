@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .text{
+            display: flex;
+        }
+        .text div{
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .box-wrap{
+            display: flex;
+        }
+        .box{
+            /* 图片原始尺寸200 * 400 */
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            border: 1px solid red;
+        }
+        .box img{
+            width: 100%; height: 100%;
+        }
+        .box1 img{
+            object-fit: contain;
+        }
+        .box2 img{
+            object-fit: cover;
+        }
+        .box3 img{
+            /* 默认值，大部分情况下会变形，一般不用 */
+            object-fit: fill;
+        }
+        .box4 img{
+            object-fit: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex">
+        
+        <div class="box-wrap">
+            <div class="box box1">
+                <img src="./zifeng3.jpg" alt="">
+            </div>
+            <div class="box box2">
+                <img src="./zifeng3.jpg" alt="">
+            </div>
+            <div class="box box3">
+                <img src="./zifeng3.jpg" alt="">
+            </div>
+            <div class="box box4">
+                <img src="./zifeng3.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="text">
+            <div class="1">
+                contain
+                不变形（保持图片原始比例）。限制在box空间内，最大程度展示。
+            </div>
+            <div class="2">cover
+                不变形（保持图片原始比例）。图片完成覆盖box区域，溢出去的一个方向不可见。
+            </div>
+            <div class="3">
+                fill
+                默认值，不管图片原始尺寸是怎样的，不管会不会使图片变形，就是填满box；
+            </div>
+            <div class="4">
+                none
+                真实图片原始尺寸。不会变形（除非图片本身就是变形的）。
+                如果设定的box比较大，则放得下；如果box设定的比较小，是会裁剪的。
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

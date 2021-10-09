@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            display: flex;
+            gap: 10px;
+        }
+        .menu-item{
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: relative;
+        }
+        .up{
+            transform: skewX(30deg);
+            -webkit-transform: skewX(30deg);
+            height: 25px;
+            background-color: gray;
+        }
+        .down{
+            transform: skewX(-30deg);
+            height: 25px;
+            background-color: gray;
+        }
+        .text{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-item">
+            <div class="up"></div>
+            <div class="down"></div>
+            <div class="text">菜单1</div>
+        </div>
+        <div class="menu-item">
+            <div class="up"></div>
+            <div class="down"></div>
+            <div class="text">菜单2</div>
+        </div>
+        <div class="menu-item">
+            <div class="up"></div>
+            <div class="down"></div>
+            <div class="text">菜单3</div>
+        </div>
+        <div class="menu-item">
+            <div class="up"></div>
+            <div class="down"></div>
+            <div class="text">菜单4</div>
+        </div>
+    </div>
+</body>
+</html>

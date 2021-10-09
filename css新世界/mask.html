@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            margin: auto;
+            width: 400px;
+            height: 400px;
+            /* 正常头像 */
+            background: url(./zf4.jpg) no-repeat;
+            background-size: cover;
+        }
+        div::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            /* 国旗图片 */
+            background: url(./flag.jpg) no-repeat;
+            background-size: cover;
+            /* mask: linear-gradient(90deg, #000 10%, transparent 70%, transparent); */
+            -webkit-mask: linear-gradient(90deg, #000 10%, transparent 70%, transparent);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
